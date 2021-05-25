@@ -59,8 +59,7 @@ public class House {
 
     @SneakyThrows
     public void createRandomHuman() {
-        int i =0;
-        while (i<50) {
+        while (start) {
 
             sleep(intensityOfPeopleGeneration);
             int randomWeight = (int) (Math.random() * 20) + 10;
@@ -72,7 +71,6 @@ public class House {
             Human human = new Human(randomWeight, randomFloor);
             floors.get(randomCurrentFloor).addHumanInQueue(human);
             log.info(human.toString()+" created on floor №" + (randomCurrentFloor + 1));
-            i++;
         }
     }
 }
